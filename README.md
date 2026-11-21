@@ -14,7 +14,7 @@ development, and `git` must be installed.
 
 ## Run it
 
-From the project directory:
+Run these commands from the repository root, the folder that contains `main.py`:
 
 ```bash
 python main.py
@@ -47,9 +47,14 @@ fed.
 ## Run the tests
 
 ```bash
+python -m venv .venv
+. .venv/bin/activate
 python -m pip install -r requirements-dev.txt
 python -m pytest -q
 ```
+
+The virtual environment keeps `pytest` away from the system Python, which is
+useful on Fedora where the system interpreter may refuse user installs.
 
 ## Greet me in every terminal
 
@@ -63,6 +68,8 @@ Every new terminal then shows the pet and feeds it any commits made since the
 last check.
 
 ## Project layout
+
+The repository root looks like this:
 
 ```text
 codepet/
